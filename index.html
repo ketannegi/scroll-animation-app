@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scroll Animation Demo</title>
+  <!-- Basic styles for the page -->
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Import React and ReactDOM from a CDN so no local install is required -->
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- Import Firebase modules from the CDN.  According to Firebase's documentation, you can load specific products directly from the global CDN using ES module imports【725528343303906†L593-L618】.  Here we import the core app and analytics modules. -->
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js';
+    import { getAnalytics } from 'https://www.gstatic.com/firebasejs/12.1.0/firebase-analytics.js';
+    // TODO: Replace the following with your own Firebase project configuration.
+    // The configuration object contains keys like apiKey, authDomain, projectId, etc.
+    const firebaseConfig = {
+      // apiKey: "YOUR_API_KEY",
+      // authDomain: "YOUR_AUTH_DOMAIN",
+      // projectId: "YOUR_PROJECT_ID",
+      // storageBucket: "YOUR_STORAGE_BUCKET",
+      // messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+      // appId: "YOUR_APP_ID",
+      // measurementId: "YOUR_MEASUREMENT_ID"
+    };
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    // Optionally enable Analytics. This call will be a no‑op if Analytics is not
+    // enabled for your Firebase project.
+    getAnalytics(app);
+  </script>
+</head>
+<body>
+  <!-- React will render into this container -->
+  <div id="root"></div>
+  <!-- Our React application code lives in app.js -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>
